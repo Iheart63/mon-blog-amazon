@@ -1,0 +1,55 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+export default function Blog() {
+  const articles = [
+    {
+      title: "Top 5 gadgets tech à ne pas manquer en 2024",
+      excerpt: "Découvrez les gadgets les plus innovants à intégrer dans votre quotidien cette année...",
+      link: "#"
+    },
+    {
+      title: "Les meilleurs accessoires pour votre maison intelligente",
+      excerpt: "Transformez votre maison avec ces accessoires connectés simples et efficaces...",
+      link: "#"
+    },
+    {
+      title: "Astuces pour maximiser vos revenus d'affiliation Amazon",
+      excerpt: "Quelques conseils pratiques pour augmenter vos commissions grâce aux liens affiliés...",
+      link: "#"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100 p-6">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-3xl mx-auto space-y-8"
+      >
+        <header className="text-center">
+          <h1 className="text-4xl font-bold">Mon Blog d'Affiliation Amazon</h1>
+          <p className="text-gray-600 mt-2">Partage de mes meilleures trouvailles et astuces pour générer des revenus en ligne.</p>
+        </header>
+
+        {articles.map((article, index) => (
+          <Card key={index} className="shadow-lg rounded-2xl">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold">{article.title}</h2>
+              <p className="mt-2 text-gray-700">{article.excerpt}</p>
+              <Button variant="outline" className="mt-4" onClick={() => window.location.href = article.link}>
+                Lire l'article
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+
+        <footer className="text-center mt-10 text-gray-500">
+          © 2024 Mon Blog d'Affiliation Amazon. Tous droits réservés.
+        </footer>
+      </motion.div>
+    </div>
+  );
+}
