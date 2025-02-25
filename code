@@ -3,6 +3,29 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
+{
+  "name": "mon-blog-affiliation",
+  "version": "1.0.0",
+  "description": "Un blog simple pour le programme d'affiliation Amazon.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": ["affiliation", "amazon", "blog", "revenu-passif"],
+  "author": "TonNom",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.12.16",
+    "lucide-react": "^0.256.0",
+    "@shadcn/ui": "^0.5.0"
+  }
+}
+
 export default function Blog() {
   const articles = [
     {
